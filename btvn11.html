@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //bài 1. Viết chương trình cho người dùng nhập vào 3 số, viết hàm kiểm tra để tìm ra số bé nhất và in ra số đó.
+        function numberMin(a) {
+        if (a.length>3) {
+            a = prompt("Hãy nhập 3 số bất kỳ cách nhau bởi dấu,").split(',');
+        } else {
+        let b = a[0]*1;
+        for (let i = 0; i < a.length; i++) {
+            if (b>(a[i]*1)) {
+                b = a[i]*1;
+            }
+         }
+            console.log(`số bé nhất trong 3 số là, ${b}`);
+        }
+        
+        }
+        numberMin(prompt("Hãy nhập 3 số bất kỳ cách nhau bởi dấu,").split(','))
+        //Bài 2: Viết hàm kiểm tra xem số người dùng nhập vào có phải là số nguyên tố hay không?
+        //(số nguyên tố là số nguyên dương chỉ có 2 ước là 1 và chính nó).
+        function test(number) {
+            let count = 0;
+            if (number<1) {
+                number = +prompt("Hãy nhập số bạn muốn kiểm tra có phải số nguyên tố hay không");
+            } else {
+                    for (let i = 3; i< number; i++) {
+                        if (number%i===0) {
+                            count = count +1;
+                            break;
+                        }
+                    }
+                }
+
+        if (count>0) {
+            console.log(`số ${number} của bạn không là số nguyên tố`);
+        } else {
+            console.log(`số ${number} của bạn là số nguyên tố`);}
+        }
+        test(+prompt("Hãy nhập số bạn muốn kiểm tra có phải số nguyên tố hay không"))
+        
+        //Bài 3: Viết hàm kiểm tra xem số người dùng nhập vào có phải là số nguyên tố hay không?
+        //(số nguyên tố là số nguyên dương chỉ có 2 ước là 1 và chính nó).
+        function result(number) {
+         let result = 1;
+         if (number>0) {
+            for (let index = 2; index <= number; index++) {
+              result = result*index;
+            }
+         } else {
+            for (let i = -1; i >= number; i--) {
+              result = result*i;
+         }
+
+         }
+         console.log(`kết quả của ${number}! là ${result}`);
+         }
+         result(+prompt("Hãy nhập số bạn muốn tính giai thừa"))
+
+        //bài 4. Cho mảng sau:
+        // let arr=[1,2,3,4,5,6,7,8,9,10]
+        // Viết hàm trả về tất cả các cặp số có tổng bằng 10
+
+
+        function sum(arr) {
+            for (let i = 0; i <= (arr.length+1)/2; i++) {
+           for (let j = i+1 ; j < arr.length; j++) {
+            if (arr[i]+arr[j]===10) {
+                console.log(`cặp sô ${arr[i]}+${arr[j]} có tổng bằng 10`);
+            }
+           }
+        }
+        }
+        sum([1,2,3,4,5,6,7,8,9,10]);
+
+        //bài 5: Cho người dùng nhập vào chuỗi kí tự. Viết hàm kiểm tra xem tần suất xuất hiện của mỗi ký tự và in ra chúng.
+
+        function test(text) {
+            for (let i = 0; i <text.length; i++) {
+                let count = 1;
+                for (let j = i+1 ; j < text.length; j++) {
+                    if (text[i]==text[j]) {
+                    count += 1;
+                    text.splice(j,1);
+                    j -= 1;
+                    }
+                }
+                console.log(`ký tự ${text[i]} xuất hiện ${count} lần`);
+            }
+        }
+        test(prompt("hãy nhập chuỗi ký tự bạn muốn kiểm tra").split(""))
+
+
+        //bài 6: 
+        function test(text) {
+            for (let i = 0; i <text.length; i++) {
+                for (let j = i+1 ; j < text.length; j++) {
+                    if (text[i]==text[j]) {
+                    text.splice(j,1);
+                    j -= 1;
+                    if (j==(text.length-1)) {
+                        text.splice(i,1);
+                        i -= 1;
+                    }
+                    }
+                }
+            }
+            let a = text[0]*1;
+            for (let k = 1; k < text.length; k++) {
+                if ((text[0]*1)<(text[k]*1)) {
+                    a = (text[k]*1);
+                }
+                
+            }
+
+            console.log(a);
+            }
+        test(prompt("hãy nhập chuỗi số bạn muốn kiểm tra").split(""))
+
+        //bài 7
+        
+
+
+
+    </script>
+</body>
+</html>
