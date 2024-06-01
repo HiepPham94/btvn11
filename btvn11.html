@@ -30,10 +30,14 @@
             if (number<1) {
                 number = +prompt("Hãy nhập số bạn muốn kiểm tra có phải số nguyên tố hay không");
             } else {
-                    for (let i = 3; i< number; i++) {
+                    if (number<4) {
+                        console.log(`số ${number} của bạn là số nguyên tố`)
+                    } else {
+                        for (let i = 2; i< number; i++) {
                         if (number%i===0) {
                             count = count +1;
                             break;
+                        }
                         }
                     }
                 }
@@ -41,9 +45,10 @@
         if (count>0) {
             console.log(`số ${number} của bạn không là số nguyên tố`);
         } else {
-            console.log(`số ${number} của bạn là số nguyên tố`);}
+            console.log(`số ${number} của bạn là số nguyên tố`);
         }
-        test(+prompt("Hãy nhập số bạn muốn kiểm tra có phải số nguyên tố hay không"))
+        }
+        test(+prompt("Hãy nhập số bạn muốn kiểm tra có phải số nguyên tố hay không"));
         
         //Bài 3: Viết hàm kiểm tra xem số người dùng nhập vào có phải là số nguyên tố hay không?
         //(số nguyên tố là số nguyên dương chỉ có 2 ước là 1 và chính nó).
